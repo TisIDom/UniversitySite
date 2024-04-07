@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h = "http://java.sun.com/jsf/html"
+>
+<head>
+    <title>University Course Selection</title>
+</head>
+<body>
+<h1>Welcome!</h1>
+<p>Choose how to browse:</p>
+<ul>
+    <h:form>
+        <li>
+            <h:link value="View Universities" outcome="/universities"/>
+        </li>
+        <li><h:selectOneMenu id="courseType">
+                <f:selectItem itemLabel="All Courses" itemValue="all" />
+                <f:selectItem itemLabel="CS Courses" itemValue="CS" />
+                <f:selectItem itemLabel="Economics Courses" itemValue="Economics" />
+            </h:selectOneMenu>
+                <h:link to="/courses.xhtml">View Courses</h:link>
+        </li>
+    </h:form>
+
+</ul>
+</body>
+</html>

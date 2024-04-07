@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<head>
+    <title>Universities</title>
+</head>
+<body>
+<h1>List of Universities</h1>
+<ul>
+    <h:form>
+        <ui:repeat var="university" value="#{universityBean.getAllUniversities()}">
+            <p><h:link outcome="courses?universityId=#{university.id}">#{university.name}</h:link></p>
+        </ui:repeat>
+    </h:form>
+</ul>
+<h2>Add a New University</h2>
+<h:form>
+    <h:inputText value="#{universityBean.newUniversity.name}" placeholder="University Name" />
+    <h:commandButton value="Add University" action="#{universityBean.addUniversity()}" />
+</h:form>
+</body>
+</html>
