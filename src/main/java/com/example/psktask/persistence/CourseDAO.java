@@ -38,6 +38,7 @@ public class CourseDAO implements BaseDAO<Course, Long>{
         Course course = em.find(Course.class, id);
         if (course != null) {
             em.remove(course);
+            System.out.println("WOW");
         }
     }
 }
